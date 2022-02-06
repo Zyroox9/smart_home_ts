@@ -1,0 +1,15 @@
+@import "../App.scss";
+
+.navbar {
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background-color: $secondary-color;
+}
+
+.logo {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 600;
+}

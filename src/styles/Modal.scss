@@ -1,0 +1,29 @@
+.modal-outer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  pointer-events: none;
+
+  .modal-inner {
+    position: fixed;
+    padding: 4rem;
+    background-color: #ffffff;
+    border-radius: 30px;
+    z-index: 5;
+    pointer-events: auto;
+  }
+
+  .exit-btn {
+    padding: 0.5rem;
+    position: absolute;
+    top: 0;
+    right: 15px;
+    cursor: pointer;
+  }
+}

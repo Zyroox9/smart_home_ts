@@ -1,0 +1,43 @@
+@import "../App.scss";
+
+.item {
+  width: 10rem;
+  height: 10rem;
+  background-color: $primary-color;
+  border-radius: 30px;
+  box-shadow: 10px 10px 10px $dark-shadow-color, -10px -10px 10px #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex-direction: column;
+  padding: 30px;
+  cursor: pointer;
+
+  .icon {
+    max-height: 60%;
+  }
+
+  .connection-state {
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+  }
+
+  .connected {
+    background-color: $success-color;
+  }
+
+  .poorConnection {
+    background-color: $warning-color;
+  }
+
+  .disconnected {
+    background-color: $fail-color;
+  }
+
+  .item-name {
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+}
