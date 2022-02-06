@@ -7,8 +7,6 @@ import { Modal } from './components/Modal';
 import DeviceDetail from './components/DeviceDetail';
 import axiosInstance from './Axios';
 
-const ws = new WebSocket("ws://61fea676a58a4e00173c9950.mockapi.io/api/v1/refresh");
-
 
 interface ISmartBulb {
   type: 'bulb';
