@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/smart_home_ts/static/css/main.4872fb56.css",
-    "main.js": "/smart_home_ts/static/js/main.b882b431.js",
+    "main.js": "/smart_home_ts/static/js/main.c2b8e33d.js",
     "static/js/787.7579a80a.chunk.js": "/smart_home_ts/static/js/787.7579a80a.chunk.js",
     "static/media/Zarowka.svg": "/smart_home_ts/static/media/Zarowka.e6e00d9ec784c1aa98f403827d356471.svg",
     "static/media/Termometr.svg": "/smart_home_ts/static/media/Termometr.96c5f56dcb44621ca330f385657923cf.svg",
     "index.html": "/smart_home_ts/index.html",
     "main.4872fb56.css.map": "/smart_home_ts/static/css/main.4872fb56.css.map",
-    "main.b882b431.js.map": "/smart_home_ts/static/js/main.b882b431.js.map",
+    "main.c2b8e33d.js.map": "/smart_home_ts/static/js/main.c2b8e33d.js.map",
     "787.7579a80a.chunk.js.map": "/smart_home_ts/static/js/787.7579a80a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4872fb56.css",
-    "static/js/main.b882b431.js"
+    "static/js/main.c2b8e33d.js"
   ]
 }
