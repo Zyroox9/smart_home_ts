@@ -81,7 +81,6 @@ export function App() {
 
       ws.onmessage = (event: any) => {
         const updatedItem: ISmartDeviceDetails = JSON.parse(event.data);
-        console.log(updatedItem)
 
         setState( prevState => { return { 
           ...prevState, 
