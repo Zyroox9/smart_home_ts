@@ -66,11 +66,21 @@ export function App() {
     const response = await axiosInstance.get(`devices/${device.id}`);
 
     if (response.status === 200) {
+      const item = response.data;
       
       setState( prevState => {  return {
         ...prevState, 
-        detailItem: response.data,
+        detailItem: item,
         isModalOpen: true,
+        devices: prevState.devices.map( device => { 
+          return device.id !== item.id ? device 
+            : { 
+              type: item.type,
+              id: item.id,
+              name: item.name,
+              connectionState: item.connectionState
+            }
+        }),
       }})
 
     }
