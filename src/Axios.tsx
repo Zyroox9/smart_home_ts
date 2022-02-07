@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseURL = 'https://61fea676a58a4e00173c9950.mockapi.io/api/v1/';
+const baseURL = 'https://api-smart-home.herokuapp.com/api/v1/';
 
 const axiosInstance = axios.create({
     baseURL: baseURL,

@@ -66,18 +66,44 @@ export function App() {
     const response = await axiosInstance.get(`devices/${device.id}`);
 
     if (response.status === 200) {
+      
       setState( prevState => {  return {
         ...prevState, 
         detailItem: response.data,
-        isModalOpen: true
+        isModalOpen: true,
       }})
+
     }
   };
 
+  function connectWS () {
+    const ws = new WebSocket("ws://api-smart-home.herokuapp.com/api/v1/refresh")
+
+      ws.onmessage = (event: any) => {
+        const updatedItem: ISmartDeviceDetails = JSON.parse(event.data);
+        console.log(updatedItem)
+
+        setState( prevState => { return { 
+          ...prevState, 
+          devices: prevState.devices.map( device => { 
+            return device.id !== updatedItem.id ? device 
+              : { 
+                type: updatedItem.type,
+                id: updatedItem.id,
+                name: updatedItem.name,
+                connectionState: updatedItem.connectionState
+              }
+          }),
+          detailItem: updatedItem.id === prevState.detailItem.id ? updatedItem : prevState.detailItem 
+        }})
+      }
+  }
+
+
   useEffect(() => {
     getDevices();
-}, [])
-
+    connectWS();
+  }, [])
 
   return (
     <div className="App">
@@ -86,7 +112,7 @@ export function App() {
       <DeviceList devices={state.devices} handleItemClick={handleItemClick} />
 
       {state.isModalOpen && 
-      <Modal closeModal={ () => setState( prevState => {return {...prevState, isModalOpen: false}})}> 
+      <Modal closeModal={ () => { setState( prevState => { return {...prevState, isModalOpen: false}})}}> 
         <DeviceDetail device={state.detailItem} />
       </Modal>}
       
