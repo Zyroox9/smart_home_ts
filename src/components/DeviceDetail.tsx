@@ -2,7 +2,6 @@ import '../styles/DeviceDetail.scss';
 import { ISmartDeviceDetails } from '../App';
 import { SmartDevice } from './SmartDevice';
 import ColorInfo from './ColorInfo';
-import TurnedOnInfo from './TurnedOnInfo';
 
 
 interface IDeviceDetailProps { 
@@ -26,13 +25,13 @@ export default function DeviceDetail( { device } : IDeviceDetailProps ) {
 
             {device.type === 'outlet' && 
             <div className="params">
-              <TurnedOnInfo isTurnedOn={device.isTurnedOn} />
+              <div>Włączone: {device.isTurnedOn ? "TAK" : "NIE"}</div>
               <div>Zużycie energii: {device.powerConsumption}W</div>
             </div>}
 
             {device.type === 'bulb' && 
             <div className="params">
-              <TurnedOnInfo isTurnedOn={device.isTurnedOn} />
+              <div>Włączone: {device.isTurnedOn ? "TAK" : "NIE"}</div>
               <div>Jasność: {device.brightness}%</div>
               <ColorInfo color={device.color} />
             </div>}
