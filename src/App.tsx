@@ -77,7 +77,7 @@ export function App() {
   };
 
   function connectWS () {
-    const ws = new WebSocket("ws://api-smart-home.herokuapp.com/api/v1/refresh")
+    const ws = new WebSocket("wss://api-smart-home.herokuapp.com/api/v1/refresh")
 
       ws.onmessage = (event: any) => {
         const updatedItem: ISmartDeviceDetails = JSON.parse(event.data);
